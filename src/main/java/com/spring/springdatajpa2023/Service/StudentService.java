@@ -17,19 +17,54 @@ public class StudentService {
     public void saveStudent() {
 
         Guardian guardian = Guardian.builder().name("pankaj").email("ee@gmail.com").mobile("2222").build();
-        Student student = Student.builder()
+        Student student1 = Student.builder()
                 .firstName("shubham")
                 .lastName("nigam")
                 .emailId("ss@gmail.com")
                 .guardian(guardian).build();
 
 
-        studentRepo.save(student);
+        studentRepo.save(student1);
+
+        Student student2 = Student.builder()
+                .firstName("shubham")
+                .lastName("kumar")
+                .emailId("ss@gmail.com")
+                .guardian(guardian).build();
+
+
+        studentRepo.save(student2);
+
+        Student student3 = Student.builder()
+                .firstName("ram")
+                .lastName("singh")
+                .emailId("ss@gmail.com")
+                .guardian(guardian).build();
+
+
+        studentRepo.save(student3);
+
+
     }
 
     public void printAllStudent() {
         List<Student> studentList = studentRepo.findAll();
         System.out.println(studentList);
     }
+
+    public List<Student> findByFirstName(String firstName){
+        return studentRepo.findByFirstName(firstName);
+    }
+
+
+    public List<Student> findByFirstNameContaining(String firstName){
+        return studentRepo.findByFirstNameContaining(firstName);
+    }
+    public List<Student> findByGuardianName(String name){
+        return studentRepo.findByGuardianName(name);
+    }
+
+
+
 
 }

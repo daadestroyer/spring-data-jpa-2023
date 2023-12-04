@@ -20,8 +20,13 @@ public class SpringDataJpa2023Application {
         studentService.saveStudent();
 
 
-        studentService.printAllStudent();
+        //studentService.printAllStudent();
 
+        // System.out.println(studentService.findByFirstName("ram"));
+
+//        System.out.println(studentService.findByFirstNameContaining("r"));
+
+        System.out.println(studentService.findByGuardianName("pankaj"));
     }
 
 }

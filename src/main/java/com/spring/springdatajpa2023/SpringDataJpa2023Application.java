@@ -12,7 +12,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class SpringDataJpa2023Application {
 
 
-
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(SpringDataJpa2023Application.class, args);
         StudentService studentService = context.getBean(StudentService.class);
@@ -26,7 +25,15 @@ public class SpringDataJpa2023Application {
 
 //        System.out.println(studentService.findByFirstNameContaining("r"));
 
-        System.out.println(studentService.findByGuardianName("pankaj"));
+//        System.out.println(studentService.findByGuardianName("pankaj"));
+
+//        System.out.println(studentService.findByFirstNameAndLastName("ram","singh"));
+
+//        System.out.println("-------->"+studentService.getStudentByEmailAddress("ss1@gmail.com"));
+
+        System.out.println("firstName = "+studentService.getStudentFirstNameByEmailAddress("ss3@gmail.com"));
+
     }
+
 
 }

@@ -20,7 +20,7 @@ public class StudentService {
         Student student1 = Student.builder()
                 .firstName("shubham")
                 .lastName("nigam")
-                .emailId("ss@gmail.com")
+                .emailId("ss1@gmail.com")
                 .guardian(guardian).build();
 
 
@@ -29,7 +29,7 @@ public class StudentService {
         Student student2 = Student.builder()
                 .firstName("shubham")
                 .lastName("kumar")
-                .emailId("ss@gmail.com")
+                .emailId("ss2@gmail.com")
                 .guardian(guardian).build();
 
 
@@ -38,7 +38,7 @@ public class StudentService {
         Student student3 = Student.builder()
                 .firstName("ram")
                 .lastName("singh")
-                .emailId("ss@gmail.com")
+                .emailId("ss3@gmail.com")
                 .guardian(guardian).build();
 
 
@@ -52,19 +52,31 @@ public class StudentService {
         System.out.println(studentList);
     }
 
-    public List<Student> findByFirstName(String firstName){
+    public List<Student> findByFirstName(String firstName) {
         return studentRepo.findByFirstName(firstName);
     }
 
 
-    public List<Student> findByFirstNameContaining(String firstName){
+    public List<Student> findByFirstNameContaining(String firstName) {
         return studentRepo.findByFirstNameContaining(firstName);
     }
-    public List<Student> findByGuardianName(String name){
+
+    public List<Student> findByGuardianName(String name) {
         return studentRepo.findByGuardianName(name);
     }
 
+    public Student findByFirstNameAndLastName(String firstName, String lastName) {
+        Student student = studentRepo.findByFirstNameAndLastName(firstName, lastName);
+        return student;
+    }
 
+    public Student getStudentByEmailAddress(String emailId){
+        return studentRepo.getStudentByEmailAddress(emailId);
+    }
+
+    public String getStudentFirstNameByEmailAddress(String emailId){
+        return studentRepo.getStudentFirstNameByEmailAddress(emailId);
+    }
 
 
 }

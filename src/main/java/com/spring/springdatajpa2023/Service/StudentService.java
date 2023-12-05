@@ -78,5 +78,9 @@ public class StudentService {
         return studentRepo.getStudentFirstNameByEmailAddress(emailId);
     }
 
+    public Student getStudentByEmailAddressNative(String emailId){
+        return studentRepo.getStudentByEmailAddressNative(emailId);
+    }
+
 
 }

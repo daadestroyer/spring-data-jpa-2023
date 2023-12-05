@@ -31,8 +31,10 @@ public class SpringDataJpa2023Application {
 
 //        System.out.println("-------->"+studentService.getStudentByEmailAddress("ss1@gmail.com"));
 
-        System.out.println("firstName = "+studentService.getStudentFirstNameByEmailAddress("ss3@gmail.com"));
+//        System.out.println("firstName = "+studentService.getStudentFirstNameByEmailAddress("ss3@gmail.com"));
 
+
+        System.out.println("Student --->"+studentService.getStudentByEmailAddressNative("ss1@gmail.com"));
     }
 
 

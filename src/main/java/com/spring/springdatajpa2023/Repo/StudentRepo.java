@@ -1,7 +1,9 @@
 package com.spring.springdatajpa2023.Repo;
 
 import com.spring.springdatajpa2023.Entity.Student;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -46,4 +48,12 @@ public interface StudentRepo extends JpaRepository<Student,Long> {
     )
     Student getStudentByEmailAddressNativeNamedParam(@Param("emailId") String emailId);
 
+
+    @Modifying
+    @Transactional
+    @Query(
+            value = "UPDATE tbl_student set fname=?1 where email=?2",
+            nativeQuery = true
+    )
+    int updateStudentNameByEmailId(String firstName,String emailId);
 }

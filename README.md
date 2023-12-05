@@ -13,3 +13,4 @@
 9. @Query
 10. Native Query
 11. Native Query Param
+12. @Modifying and @Transactional

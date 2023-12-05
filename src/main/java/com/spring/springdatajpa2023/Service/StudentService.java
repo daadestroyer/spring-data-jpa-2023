@@ -86,4 +86,8 @@ public class StudentService {
         return studentRepo.getStudentByEmailAddressNativeNamedParam(emailId);
     }
 
+    public int updateStudentNameByEmailId(String firstName,String emailId){
+        return studentRepo.updateStudentNameByEmailId(firstName,emailId);
+    }
+
 }

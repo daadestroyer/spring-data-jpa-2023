@@ -35,7 +35,9 @@ public class SpringDataJpa2023Application {
 
 //        System.out.println("Student --->"+studentService.getStudentByEmailAddressNative("ss1@gmail.com"));
 
-        System.out.println("Student--->"+studentService.getStudentByEmailAddressNativeNamedParam("ss3@gmail.com"));
+//        System.out.println("Student--->"+studentService.getStudentByEmailAddressNativeNamedParam("ss3@gmail.com"));
+
+        System.out.println(studentService.updateStudentNameByEmailId("shubh","ss1@gmail.com") > 0 ? "Records Updated" : "Not Updated");
     }
 
 

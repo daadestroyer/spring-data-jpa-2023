@@ -1,6 +1,9 @@
 package com.spring.springdatajpa2023;
 
+import com.spring.springdatajpa2023.Entity.Course;
 import com.spring.springdatajpa2023.Repo.StudentRepo;
+import com.spring.springdatajpa2023.Service.CourseMaterialService;
+import com.spring.springdatajpa2023.Service.CourseService;
 import com.spring.springdatajpa2023.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -14,10 +17,16 @@ public class SpringDataJpa2023Application {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(SpringDataJpa2023Application.class, args);
+
         StudentService studentService = context.getBean(StudentService.class);
 
-        studentService.saveStudent();
+        CourseMaterialService courseMaterialService = context.getBean(CourseMaterialService.class);
 
+        CourseService courseService = context.getBean(CourseService.class);
+
+
+
+        studentService.saveStudent();
 
         //studentService.printAllStudent();
 
@@ -37,7 +46,15 @@ public class SpringDataJpa2023Application {
 
 //        System.out.println("Student--->"+studentService.getStudentByEmailAddressNativeNamedParam("ss3@gmail.com"));
 
-        System.out.println(studentService.updateStudentNameByEmailId("shubh","ss1@gmail.com") > 0 ? "Records Updated" : "Not Updated");
+//        System.out.println(studentService.updateStudentNameByEmailId("shubh","ss1@gmail.com") > 0 ? "Records Updated" : "Not Updated");
+
+        courseMaterialService.saveCourseMaterial();
+
+//        System.out.println(courseMaterialService.printAllCourseMaterial());
+
+
+        System.out.println(courseService.printAllCourse());
+
     }
 
 

@@ -11,3 +11,4 @@
 7. @AttributeOverride
 8. custom method creation in repo
 9. @Query
+10. Native Query

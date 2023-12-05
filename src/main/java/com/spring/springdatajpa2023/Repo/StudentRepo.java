@@ -3,6 +3,7 @@ package com.spring.springdatajpa2023.Repo;
 import com.spring.springdatajpa2023.Entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -31,11 +32,18 @@ public interface StudentRepo extends JpaRepository<Student,Long> {
     @Query("select student.firstName from Student student where student.emailId = ?1 ")
     String getStudentFirstNameByEmailAddress(String emailId);
 
-    // NATIVE QUERY
+    // Native Query
     @Query(
             value = "SELECT * FROM tbl_student s where s.email = ?1",
             nativeQuery = true
     )
     Student getStudentByEmailAddressNative(String emailId);
+
+    // Native Named Param
+    @Query(
+            value = "SELECT * FROM tbl_student s where s.email = :emailId",
+            nativeQuery = true
+    )
+    Student getStudentByEmailAddressNativeNamedParam(@Param("emailId") String emailId);
 
 }

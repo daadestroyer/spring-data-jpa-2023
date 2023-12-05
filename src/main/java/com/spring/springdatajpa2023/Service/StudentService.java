@@ -82,5 +82,8 @@ public class StudentService {
         return studentRepo.getStudentByEmailAddressNative(emailId);
     }
 
+    public Student getStudentByEmailAddressNativeNamedParam(String emailId){
+        return studentRepo.getStudentByEmailAddressNativeNamedParam(emailId);
+    }
 
 }

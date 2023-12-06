@@ -43,6 +43,14 @@ public class StudentService {
 
 
         studentRepo.save(student3);
+        Student student4 = Student.builder()
+                .firstName("ansh")
+                .lastName("gupta")
+                .emailId("ag@gmail.com")
+                .guardian(guardian).build();
+
+
+        studentRepo.save(student4);
 
 
     }

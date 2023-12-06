@@ -5,6 +5,7 @@ import com.spring.springdatajpa2023.Repo.StudentRepo;
 import com.spring.springdatajpa2023.Service.CourseMaterialService;
 import com.spring.springdatajpa2023.Service.CourseService;
 import com.spring.springdatajpa2023.Service.StudentService;
+import com.spring.springdatajpa2023.Service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,10 +24,10 @@ public class SpringDataJpa2023Application {
         CourseMaterialService courseMaterialService = context.getBean(CourseMaterialService.class);
 
         CourseService courseService = context.getBean(CourseService.class);
+        TeacherService teacherService = context.getBean(TeacherService.class);
 
 
-
-        studentService.saveStudent();
+//        studentService.saveStudent();
 
         //studentService.printAllStudent();
 
@@ -48,13 +49,19 @@ public class SpringDataJpa2023Application {
 
 //        System.out.println(studentService.updateStudentNameByEmailId("shubh","ss1@gmail.com") > 0 ? "Records Updated" : "Not Updated");
 
-        courseMaterialService.saveCourseMaterial();
+//        courseMaterialService.saveCourseMaterial();
 
 //        System.out.println(courseMaterialService.printAllCourseMaterial());
 
 
-        System.out.println(courseService.printAllCourse());
+//        System.out.println(courseService.printAllCourse());
 
+
+//        System.out.println(teacherService.saveTeacher());
+
+//        System.out.println(courseService.saveCourseWithTeacher());
+
+        System.out.println(courseService.findAllPagination());
     }
 
 

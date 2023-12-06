@@ -1,13 +1,11 @@
 package com.spring.springdatajpa2023.Entity;
 
-import com.spring.springdatajpa2023.Service.CourseMaterialService;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 
 @Entity
 @Data
@@ -28,6 +26,11 @@ public class Course {
     private Integer credit;
     @OneToOne( mappedBy = "course")
     private CourseMaterial courseMaterial;
+
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "teacher_Id", referencedColumnName = "teacherId")
+    private Teacher teacher;
 
 
 

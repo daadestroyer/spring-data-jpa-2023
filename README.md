@@ -21,3 +21,5 @@ EagerFetching ==> we have course and courseMaterial table if tried finding cours
 <br>
 LazyFetching ==> we have course and courseMaterial table if tried finding courseMaterial it will fetch courseMaterial and not course
 16. OneToOne Bidirectional Mapping
+17. OneToMany and ManyToOne
+18. Paging and Sorting
